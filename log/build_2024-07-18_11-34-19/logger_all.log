@@ -1,0 +1,275 @@
+[0.101s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.101s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78dc3dc41e40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78dc3dc00340>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78dc3dc00340>>, mixin_verb=('build',))
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.262s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/joshua/Desktop/rocker_bogie_simulation'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extensions ['ignore', 'ignore_ament_install']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extension 'colcon_meta'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extensions ['ros']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_control) by extension 'ros'
+[0.278s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_control' with type 'ros.ament_cmake' and name 'rover_control'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['ignore', 'ignore_ament_install']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ignore'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ignore_ament_install'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['colcon_pkg']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'colcon_pkg'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['colcon_meta']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'colcon_meta'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['ros']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ros'
+[0.279s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_description' with type 'ros.ament_cmake' and name 'rover_description'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extension 'ignore'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extension 'ignore_ament_install'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extensions ['colcon_pkg']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extension 'colcon_pkg'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extensions ['colcon_meta']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extension 'colcon_meta'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extensions ['ros']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_gazebo) by extension 'ros'
+[0.279s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_gazebo' with type 'ros.ament_cmake' and name 'rover_gazebo'
+[0.280s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.280s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.280s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.280s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.280s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.297s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.298s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.299s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.299s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.299s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.299s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.299s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.300s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/joshua/Desktop/rocker_bogie_simulation/install
+[0.302s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 257 installed packages in /opt/ros/humble
+[0.305s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_args' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_target' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.344s] DEBUG:colcon.colcon_core.verb:Building package 'rover_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control', 'merge_install': False, 'path': '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_control', 'symlink_install': False, 'test_result_base': None}
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_args' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_target' from command line to 'None'
+[0.344s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.345s] DEBUG:colcon.colcon_core.verb:Building package 'rover_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description', 'merge_install': False, 'path': '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_description', 'symlink_install': False, 'test_result_base': None}
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.345s] Level 5:colcon.colcon_core.verb:set package 'rover_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.345s] DEBUG:colcon.colcon_core.verb:Building package 'rover_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo', 'merge_install': False, 'path': '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.345s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.346s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.346s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_control' with build type 'ament_cmake'
+[0.347s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_control'
+[0.349s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.349s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.349s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.352s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_description' with build type 'ament_cmake'
+[0.352s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_description'
+[0.353s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.353s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.356s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo' with build type 'ament_cmake'
+[0.356s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo'
+[0.356s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.357s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.364s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_control -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control
+[0.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description
+[0.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo
+[1.020s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description
+[1.022s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description -- -j8 -l8
+[1.063s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description -- -j8 -l8
+[1.096s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description
+[1.109s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_description)
+[1.109s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description
+[1.112s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' for CMake module files
+[1.113s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' for CMake config files
+[1.113s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_description', 'cmake_prefix_path')
+[1.114s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.ps1'
+[1.115s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.dsv'
+[1.115s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.sh'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/bin'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/lib/pkgconfig/rover_description.pc'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/lib/python3.10/site-packages'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/bin'
+[1.117s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.ps1'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.dsv'
+[1.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.sh'
+[1.120s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.bash'
+[1.121s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.zsh'
+[1.122s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/colcon-core/packages/rover_description)
+[1.146s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_description)
+[1.147s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' for CMake module files
+[1.147s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description' for CMake config files
+[1.148s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_description', 'cmake_prefix_path')
+[1.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.ps1'
+[1.149s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.dsv'
+[1.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/hook/cmake_prefix_path.sh'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/bin'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/lib/pkgconfig/rover_description.pc'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/lib/python3.10/site-packages'
+[1.151s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/bin'
+[1.151s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.ps1'
+[1.152s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.dsv'
+[1.152s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.sh'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.bash'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.zsh'
+[1.153s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/colcon-core/packages/rover_description)
+[2.788s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo
+[2.789s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo -- -j8 -l8
+[2.832s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo -- -j8 -l8
+[2.857s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo
+[2.870s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_gazebo)
+[2.870s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' for CMake module files
+[2.871s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo
+[2.872s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' for CMake config files
+[2.872s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_gazebo', 'cmake_prefix_path')
+[2.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.ps1'
+[2.873s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.dsv'
+[2.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.sh'
+[2.874s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/bin'
+[2.874s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/lib/pkgconfig/rover_gazebo.pc'
+[2.874s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/lib/python3.10/site-packages'
+[2.874s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/bin'
+[2.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.ps1'
+[2.875s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.dsv'
+[2.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.sh'
+[2.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.bash'
+[2.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.zsh'
+[2.877s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/colcon-core/packages/rover_gazebo)
+[2.902s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_gazebo)
+[2.902s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' for CMake module files
+[2.902s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo' for CMake config files
+[2.903s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_gazebo', 'cmake_prefix_path')
+[2.903s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.ps1'
+[2.903s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.dsv'
+[2.904s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/hook/cmake_prefix_path.sh'
+[2.904s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/bin'
+[2.905s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/lib/pkgconfig/rover_gazebo.pc'
+[2.905s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/lib/python3.10/site-packages'
+[2.905s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/bin'
+[2.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.ps1'
+[2.906s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.dsv'
+[2.907s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.sh'
+[2.907s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.bash'
+[2.908s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.zsh'
+[2.908s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/colcon-core/packages/rover_gazebo)
+[3.229s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_control -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control
+[3.231s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_control -- -j8 -l8
+[3.277s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_control -- -j8 -l8
+[3.300s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_control
+[3.311s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_control)
+[3.312s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' for CMake module files
+[3.313s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_control
+[3.313s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' for CMake config files
+[3.313s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_control', 'cmake_prefix_path')
+[3.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.ps1'
+[3.314s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.dsv'
+[3.315s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.sh'
+[3.315s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/bin'
+[3.315s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/lib/pkgconfig/rover_control.pc'
+[3.316s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/lib/python3.10/site-packages'
+[3.316s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/bin'
+[3.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.ps1'
+[3.317s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.dsv'
+[3.317s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.sh'
+[3.317s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.bash'
+[3.318s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.zsh'
+[3.318s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/colcon-core/packages/rover_control)
+[3.341s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_control)
+[3.342s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' for CMake module files
+[3.342s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control' for CMake config files
+[3.342s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_control', 'cmake_prefix_path')
+[3.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.ps1'
+[3.343s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.dsv'
+[3.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/hook/cmake_prefix_path.sh'
+[3.344s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/bin'
+[3.344s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/lib/pkgconfig/rover_control.pc'
+[3.344s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/lib/python3.10/site-packages'
+[3.344s] Level 1:colcon.colcon_core.environment:checking '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/bin'
+[3.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.ps1'
+[3.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.dsv'
+[3.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.sh'
+[3.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.bash'
+[3.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/rover_control/package.zsh'
+[3.347s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joshua/Desktop/rocker_bogie_simulation/install/rover_control/share/colcon-core/packages/rover_control)
+[3.347s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.348s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.348s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.348s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.353s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.353s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.353s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.363s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.363s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joshua/Desktop/rocker_bogie_simulation/install/local_setup.ps1'
+[3.364s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/joshua/Desktop/rocker_bogie_simulation/install/_local_setup_util_ps1.py'
+[3.366s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joshua/Desktop/rocker_bogie_simulation/install/setup.ps1'
+[3.368s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joshua/Desktop/rocker_bogie_simulation/install/local_setup.sh'
+[3.368s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/joshua/Desktop/rocker_bogie_simulation/install/_local_setup_util_sh.py'
+[3.369s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joshua/Desktop/rocker_bogie_simulation/install/setup.sh'
+[3.370s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joshua/Desktop/rocker_bogie_simulation/install/local_setup.bash'
+[3.370s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joshua/Desktop/rocker_bogie_simulation/install/setup.bash'
+[3.371s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joshua/Desktop/rocker_bogie_simulation/install/local_setup.zsh'
+[3.372s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joshua/Desktop/rocker_bogie_simulation/install/setup.zsh'

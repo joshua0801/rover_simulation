@@ -1,0 +1,43 @@
+[0.014s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description
+[0.074s] -- The C compiler identification is GNU 11.4.0
+[0.133s] -- The CXX compiler identification is GNU 11.4.0
+[0.140s] -- Detecting C compiler ABI info
+[0.215s] -- Detecting C compiler ABI info - done
+[0.226s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.227s] -- Detecting C compile features
+[0.228s] -- Detecting C compile features - done
+[0.232s] -- Detecting CXX compiler ABI info
+[0.322s] -- Detecting CXX compiler ABI info - done
+[0.335s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.336s] -- Detecting CXX compile features
+[0.336s] -- Detecting CXX compile features - done
+[0.340s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.489s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.571s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.651s] -- Added test 'lint_cmake' to check CMake code style
+[0.653s] -- Added test 'xmllint' to check XML markup files
+[0.655s] -- Configuring done
+[0.659s] -- Generating done
+[0.660s] -- Build files have been written to: /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description
+[0.667s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_description
+[0.669s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description -- -j8 -l8
+[0.710s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description -- -j8 -l8
+[0.743s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description
+[0.751s] -- Install configuration: ""
+[0.751s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/ament_index/resource_index/package_run_dependencies/rover_description
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/ament_index/resource_index/parent_prefix_path/rover_description
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/environment/ament_prefix_path.sh
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/environment/ament_prefix_path.dsv
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/environment/path.sh
+[0.752s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/environment/path.dsv
+[0.753s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/local_setup.bash
+[0.753s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/local_setup.sh
+[0.753s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/local_setup.zsh
+[0.753s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/local_setup.dsv
+[0.753s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.dsv
+[0.754s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/ament_index/resource_index/packages/rover_description
+[0.754s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/cmake/rover_descriptionConfig.cmake
+[0.754s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/cmake/rover_descriptionConfig-version.cmake
+[0.754s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_description/share/rover_description/package.xml
+[0.756s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_description

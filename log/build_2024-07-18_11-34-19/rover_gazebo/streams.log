@@ -1,0 +1,132 @@
+[0.015s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo
+[0.075s] -- The C compiler identification is GNU 11.4.0
+[0.136s] -- The CXX compiler identification is GNU 11.4.0
+[0.147s] -- Detecting C compiler ABI info
+[0.223s] -- Detecting C compiler ABI info - done
+[0.234s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.235s] -- Detecting C compile features
+[0.235s] -- Detecting C compile features - done
+[0.240s] -- Detecting CXX compiler ABI info
+[0.331s] -- Detecting CXX compiler ABI info - done
+[0.347s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.347s] -- Detecting CXX compile features
+[0.348s] -- Detecting CXX compile features - done
+[0.350s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.482s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.574s] -- Found gazebo_ros: 3.7.0 (/opt/ros/humble/share/gazebo_ros/cmake)
+[0.635s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.639s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.649s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.667s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.690s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.774s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.777s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.884s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.917s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.969s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.978s] -- Looking for pthread.h
+[1.054s] -- Looking for pthread.h - found
+[1.055s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.133s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.134s] -- Found Threads: TRUE  
+[1.312s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[1.313s] -- Checking for module 'bullet>=2.82'
+[1.325s] --   Found bullet, version 3.05
+[1.430s] -- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+[1.481s] -- Found assimp: /usr/include (found version "5.2.0") 
+[1.500s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[1.527s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[1.539s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.545s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.550s] -- Searching for dependencies of ignition-math6
+[1.552s] -- Looking for OGRE...
+[1.552s] -- OGRE_PREFIX_WATCH changed.
+[1.558s] -- Checking for module 'OGRE'
+[1.572s] --   Found OGRE, version 1.9.0
+[1.607s] -- Found Ogre Ghadamon (1.9.0)
+[1.616s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[1.627s] -- Looking for OGRE_Paging...
+[1.637s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[1.637s] -- Looking for OGRE_Terrain...
+[1.648s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[1.648s] -- Looking for OGRE_Property...
+[1.655s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[1.655s] -- Looking for OGRE_RTShaderSystem...
+[1.664s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[1.664s] -- Looking for OGRE_Volume...
+[1.670s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[1.670s] -- Looking for OGRE_Overlay...
+[1.679s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[1.809s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.811s] -- Looking for ignition-transport8 -- found version 8.2.1
+[1.811s] -- Searching for dependencies of ignition-transport8
+[1.830s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[1.842s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[1.847s] -- Checking for module 'libzmq >= 4'
+[1.860s] --   Found libzmq , version 4.3.4
+[1.896s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.901s] -- Checking for module 'uuid'
+[1.914s] --   Found uuid, version 2.37.2
+[1.952s] -- Found UUID: TRUE  
+[1.955s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[1.956s] -- Searching for dependencies of ignition-msgs5
+[1.983s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.990s] -- Checking for module 'tinyxml2'
+[2.006s] --   Found tinyxml2, version 9.0.0
+[2.046s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[2.049s] -- Looking for ignition-common3 -- found version 3.14.0
+[2.050s] -- Searching for dependencies of ignition-common3
+[2.050s] -- Looking for dlfcn.h - found
+[2.051s] -- Looking for libdl - found
+[2.053s] -- Found DL: TRUE  
+[2.068s] -- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+[2.069s] -- Searching for <ignition-common3> component [graphics]
+[2.071s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[2.071s] -- Searching for dependencies of ignition-common3-graphics
+[2.071s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.075s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[2.075s] -- Searching for dependencies of ignition-fuel_tools4
+[2.162s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[2.173s] -- Checking for module 'jsoncpp'
+[2.187s] --   Found jsoncpp, version 1.9.5
+[2.224s] -- Found JSONCPP: TRUE  
+[2.229s] -- Checking for module 'libzip'
+[2.241s] --   Found libzip, version 1.7.3
+[2.274s] -- Found ZIP: TRUE  
+[2.274s] -- Looking for ignition-common3 -- found version 3.14.0
+[2.274s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.275s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[2.278s] -- Gazebo version: 11.10
+[2.278s] -- Checking for module 'tbb'
+[2.292s] --   Found tbb, version 2021.5.0
+[2.333s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.406s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.407s] -- Added test 'lint_cmake' to check CMake code style
+[2.408s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.410s] -- Added test 'xmllint' to check XML markup files
+[2.411s] -- Configuring done
+[2.416s] -- Generating done
+[2.418s] -- Build files have been written to: /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo
+[2.430s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/joshua/Desktop/rocker_bogie_simulation/src/rover_gazebo -DCMAKE_INSTALL_PREFIX=/home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo
+[2.432s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo -- -j8 -l8
+[2.476s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo -- -j8 -l8
+[2.501s] Invoking command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo
+[2.509s] -- Install configuration: ""
+[2.509s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/launch
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/launch/rover_gazebo.py
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/ament_index/resource_index/package_run_dependencies/rover_gazebo
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/ament_index/resource_index/parent_prefix_path/rover_gazebo
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/environment/ament_prefix_path.sh
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/environment/ament_prefix_path.dsv
+[2.510s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/environment/path.sh
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/environment/path.dsv
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/local_setup.bash
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/local_setup.sh
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/local_setup.zsh
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/local_setup.dsv
+[2.511s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.dsv
+[2.512s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/ament_index/resource_index/packages/rover_gazebo
+[2.512s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/cmake/rover_gazeboConfig.cmake
+[2.512s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/cmake/rover_gazeboConfig-version.cmake
+[2.512s] -- Installing: /home/joshua/Desktop/rocker_bogie_simulation/install/rover_gazebo/share/rover_gazebo/package.xml
+[2.515s] Invoked command in '/home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/joshua/Desktop/rocker_bogie_simulation/build/rover_gazebo
