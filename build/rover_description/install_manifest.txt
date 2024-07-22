@@ -1,3 +1,5 @@
+/home/joshua/Desktop/rover_simulation/install/rover_description/share/rover_description//backup.urdf
+/home/joshua/Desktop/rover_simulation/install/rover_description/share/rover_description//rover.xacro.urdf
 /home/joshua/Desktop/rover_simulation/install/rover_description/share/ament_index/resource_index/package_run_dependencies/rover_description
 /home/joshua/Desktop/rover_simulation/install/rover_description/share/ament_index/resource_index/parent_prefix_path/rover_description
 /home/joshua/Desktop/rover_simulation/install/rover_description/share/rover_description/environment/ament_prefix_path.sh

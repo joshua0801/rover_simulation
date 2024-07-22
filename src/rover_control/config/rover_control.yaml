@@ -1,15 +1,20 @@
-rover:
-  # Publish all joint states -----------------------------------
-  joint_state_controller:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50  `   
+controller_manager:
+  ros__parameters:
+    update_rate: 100.0
 
-  # Position Controllers ---------------------------------------
-  # Differential Drive Controller
-  diff_drive_controller:
-    type: diff_drive_controller/DiffDriveController
-    left_wheel_names: ["front_left_wheel_joint", "middle_left_wheel_joint", "rear_left_wheel_joint"]
-    right_wheel_names: ["front_right_wheel_joint", "middle_right_wheel_joint", "rear_right_wheel_joint"]
-    publish_rate: 50
-    wheel_separation: 0.16 #160mm
-    wheel_radius: 0.05 #50mm
+      joint_state_controller:
+        type: joint_state_controller/JointStateController
+
+      diff_drive_base_controller:
+        type: diff_drive_controller/DiffDriveController
+
+diff_drive_base_controller:
+  ros__parameters:
+    left_wheel_names: ["left_wheel_1_joint", "left_wheel_2_joint", "left_wheel_3_joint"]
+    right_wheel_names: ["right_wheel_1_joint", "right_wheel_2_joint", "right_wheel_3_joint"]
+
+    wheel_seperation: 0.160
+    wheel_radius: 0.05
+
+    linear_velocity: 0.5
+    angular_velocity: 0.0

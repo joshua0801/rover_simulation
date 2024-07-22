@@ -13,7 +13,7 @@ find_package(ament_cmake REQUIRED)
 find_package(gazebo_ros REQUIRED)
 # Install directories
 install(DIRECTORY launch/
-  DESTINATION share/${PROJECT_NAME}/launch)
+  DESTINATION share/${CMAKE_PROJECT_NAME}/)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

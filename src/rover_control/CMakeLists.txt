@@ -5,16 +5,18 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# Find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(controller_manager REQUIRED)
-find_package(ros2_control REQUIRED)
-find_package(ros2_controllers REQUIRED)
-find_package(robot_state_publisher REQUIRED)
+find_package(controller_interface REQUIRED)
 
-# Install directories
-install(DIRECTORY launch/
-  DESTINATION share/${PROJECT_NAME}/launch)
+# Install configuration files
+install(DIRECTORY config
+  DESTINATION share/${CMAKE_PROJECT_NAME}/
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

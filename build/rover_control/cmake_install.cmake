@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rover_control/launch" TYPE DIRECTORY FILES "/home/joshua/Desktop/rover_simulation/src/rover_control/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rover_control/" TYPE DIRECTORY FILES "/home/joshua/Desktop/rover_simulation/src/rover_control/config")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
