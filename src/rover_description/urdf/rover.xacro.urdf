@@ -30,7 +30,7 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
     <inertial>
-      <mass value="5"/>
+      <mass value="3"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -70,7 +70,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -89,7 +89,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -130,7 +130,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -149,7 +149,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -171,7 +171,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -190,9 +190,21 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.3"/>
+      <mass value="0.35"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
+  </link>
+
+  <link name="referrence">
+    <visual>
+      <origin xyz="0.15 0.05 -0.115" rpy="0 0 3.14"/>
+      <geometry>
+        <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/rover.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="example_material">
+        <color rgba="0.8 0.8 0.8 0.4"/>
+      </material>
+    </visual>
   </link>
   
 
@@ -255,6 +267,12 @@
     <origin xyz="-0.17 -0.125 -0.115" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
+
+  <joint name="referrence" type="fixed">
+    <parent link="base_link"/>
+    <child link="referrence"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
   <!-- transmission ####################################################### -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
@@ -262,7 +280,7 @@
     </hardware>
   
     <!-- Left wheel 1 -->
-    <joint name="left_wheel_1_joint">
+    <joint name="bogie_left_front_wheel_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -272,7 +290,7 @@
     </joint>
   
     <!-- Left wheel 2 -->
-    <joint name="left_wheel_2_joint">
+    <joint name="bogie_left_back_wheel_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -282,7 +300,7 @@
     </joint>
   
     <!-- Left wheel 3 -->
-    <joint name="left_wheel_3_joint">
+    <joint name="back_left_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -292,7 +310,7 @@
     </joint>
   
     <!-- Right wheel 1 -->
-    <joint name="right_wheel_1_joint">
+    <joint name="bogie_right_front_wheel_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -302,7 +320,7 @@
     </joint>
   
     <!-- Right wheel 2 -->
-    <joint name="right_wheel_2_joint">
+    <joint name="bogie_right_back_wheel_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -312,7 +330,7 @@
     </joint>
   
     <!-- Right wheel 3 -->
-    <joint name="right_wheel_3_joint">
+    <joint name="back_right_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -325,7 +343,9 @@
 
   <!-- gazebo plugin-->
   <gazebo>
+    <!-- Joint state publisher -->
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find rover_control)/config/rover_control.yaml</parameters>
     </plugin>
   </gazebo>
   

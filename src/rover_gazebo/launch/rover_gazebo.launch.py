@@ -1,60 +1,71 @@
 import os
+
+from ament_index_python.packages import get_package_share_directory
+
+
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess
+from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
+from launch.event_handlers import OnProcessExit
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
 from launch_ros.actions import Node
 
 import xacro
 
 def generate_launch_description():
-    # Paths to different files and folders
-    current_directory = os.getcwd()
-    world_file = os.path.join(current_directory, 'src/rover_gazebo/worlds/rover_world.world')
-    urdf_file = os.path.join(current_directory, 'src/rover_description/urdf/rover.xacro.urdf')
-    control_yaml = os.path.join(current_directory, 'src/rover_control/config/rover_control.yaml')
+  current_directory = os.getcwd()
+  world_file = os.path.join(current_directory, 'src/rover_gazebo/worlds/scaled_world.world')
+  gazebo = ExecuteProcess(
+      cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so', '-s', 'libgazebo_ros_init.so', world_file],
+      output='screen'
+  )
+  
+  xacro_file = os.path.join(get_package_share_directory('rover_description'), 'rover.xacro.urdf')
 
-    # Launch configuration variables
-    world = DeclareLaunchArgument(
-        'world',
-        default_value=world_file,
-        description='Path to Gazebo world file'
-    )
-    
-    doc = xacro.parse(open(urdf_file))
-    xacro.process_doc(doc)
-    params = {'robot_description': doc.toxml()}
+  doc = xacro.parse(open(xacro_file))
+  xacro.process_doc(doc)
+  params = {'robot_description': doc.toxml()}
 
-    # Start Gazebo server with the specified world file and plugin
-    start_gazebo_server = ExecuteProcess(
-        cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so', '-s', 'libgazebo_ros_init.so', world_file],
-        output='screen'
-    )
-    state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        parameters=[params]
-    )
-    urdf_spawner = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'rover'],
-        output='screen',
-    )
-    control_node = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        output='screen',
-        parameters=[control_yaml]
-    )
+  node_robot_state_publisher = Node(
+      package='robot_state_publisher',
+      executable='robot_state_publisher',
+      output='screen',
+      parameters=[params]
+  )
 
-    # Create a LaunchDescription instance
-    ld = LaunchDescription()
+  spawn_entity = Node(
+      package='gazebo_ros',
+      executable='spawn_entity.py',
+      arguments=['-topic', 'robot_description', '-entity', 'rover'],
+      output='screen'
+  )
+  
+  load_joint_state_broadcaster = ExecuteProcess(
+      cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+            'joint_state_broadcaster'],
+      output='screen'
+  )
 
-    # Add actions to the LaunchDescription instance
-    ld.add_action(world)
-    ld.add_action(start_gazebo_server)
-    ld.add_action(state_publisher)
-    ld.add_action(urdf_spawner)
-    ld.add_action(control_node)
+  load_diff_drive_base_controller = ExecuteProcess(
+      cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+            'diff_drive_base_controller'],
+      output='screen'
+  )
 
-    return ld
+  return LaunchDescription([
+      RegisterEventHandler(
+          event_handler=OnProcessExit(
+              target_action=spawn_entity,
+              on_exit=[load_joint_state_broadcaster],
+          )
+      ),
+      RegisterEventHandler(
+          event_handler=OnProcessExit(
+              target_action=load_joint_state_broadcaster,
+              on_exit=[load_diff_drive_base_controller],
+          )
+      ),
+      gazebo,
+      node_robot_state_publisher,
+      spawn_entity,
+  ])
