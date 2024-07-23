@@ -235,7 +235,7 @@
   </joint>
 
   <!-- bogie_right -->
-  <joint name="bogie_right_joint" type="continuous">
+  <joint name="bogie_right_joint" type="revolute">
     <parent link="base_link"/>
     <child link="bogie_right"/>
     <origin xyz="0.071 -0.125 -0.05" rpy="0 0 0"/>
