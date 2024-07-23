@@ -1,9 +1,0 @@
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/uninstall.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/rover_description_uninstall.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/test.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/edit_cache.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/rebuild_cache.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/list_install_components.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/install.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/install/local.dir
-/home/joshua/Desktop/rover_simulation/build/rover_description/CMakeFiles/install/strip.dir
