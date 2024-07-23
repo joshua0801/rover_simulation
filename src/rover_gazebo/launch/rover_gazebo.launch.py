@@ -14,7 +14,7 @@ import xacro
 
 def generate_launch_description():
   current_directory = os.getcwd()
-  world_file = os.path.join(current_directory, 'src/rover_gazebo/worlds/scaled_world.world')
+  world_file = os.path.join(current_directory, 'src/rover_gazebo/worlds/rover_world.world')
   gazebo = ExecuteProcess(
       cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so', '-s', 'libgazebo_ros_init.so', world_file],
       output='screen'
