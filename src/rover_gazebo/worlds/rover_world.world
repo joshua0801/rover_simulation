@@ -91,10 +91,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='real_stairs'>
-      <pose>1.8125 0 0 0 -0 0</pose>
+      <pose>1.4375 0 0 0 -0 0</pose>
       <link name='Stairs_1'>
         <visual name='Stairs_1_Visual_0'>
-          <pose>-0.325 -0 0.0875 0 -0 1.5708</pose>
+          <pose>-0.7 -0 0.0875 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -117,7 +117,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>-0.325 -0 0.0875 0 -0 1.5708</pose>
+          <pose>-0.7 -0 0.0875 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -133,7 +133,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_1'>
-          <pose>-0.1 -0 0.2625 0 -0 1.5708</pose>
+          <pose>-0.475 -0 0.2625 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -156,7 +156,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>-0.1 -0 0.2625 0 -0 1.5708</pose>
+          <pose>-0.475 -0 0.2625 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -172,7 +172,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_2'>
-          <pose>0.125 -0 0.4375 0 -0 1.5708</pose>
+          <pose>-0.25 -0 0.4375 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -195,7 +195,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>0.125 -0 0.4375 0 -0 1.5708</pose>
+          <pose>-0.25 -0 0.4375 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -211,7 +211,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_3'>
-          <pose>0.35 -0 0.6125 0 -0 1.5708</pose>
+          <pose>-0.025 -0 0.6125 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -234,7 +234,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>0.35 -0 0.6125 0 -0 1.5708</pose>
+          <pose>-0.025 -0 0.6125 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -250,7 +250,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_4'>
-          <pose>0.575 -0 0.7875 0 -0 1.5708</pose>
+          <pose>0.2 -0 0.7875 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -273,7 +273,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>0.575 -0 0.7875 0 -0 1.5708</pose>
+          <pose>0.2 -0 0.7875 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -289,7 +289,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_5'>
-          <pose>0.8 0 0.9625 0 -0 1.5708</pose>
+          <pose>0.425 0 0.9625 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -312,7 +312,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>0.8 0 0.9625 0 -0 1.5708</pose>
+          <pose>0.425 0 0.9625 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -328,7 +328,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_6'>
-          <pose>1.025 0 1.1375 0 -0 1.5708</pose>
+          <pose>0.65 0 1.1375 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -351,7 +351,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>1.025 0 1.1375 0 -0 1.5708</pose>
+          <pose>0.65 0 1.1375 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -367,7 +367,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_7'>
-          <pose>1.25 0 1.3125 0 -0 1.5708</pose>
+          <pose>0.875 0 1.3125 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -390,7 +390,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>1.25 0 1.3125 0 -0 1.5708</pose>
+          <pose>0.875 0 1.3125 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -406,7 +406,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_8'>
-          <pose>1.475 0 1.4875 0 -0 1.5708</pose>
+          <pose>1.1 0 1.4875 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -429,7 +429,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>1.475 0 1.4875 0 -0 1.5708</pose>
+          <pose>1.1 0 1.4875 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -445,7 +445,7 @@
           </surface>
         </collision>
         <visual name='Stairs_1_Visual_9'>
-          <pose>1.7 0 1.6625 0 -0 1.5708</pose>
+          <pose>1.325 0 1.6625 0 -0 1.5708</pose>
           <geometry>
             <box>
               <size>1 0.225 0.175</size>
@@ -468,7 +468,7 @@
               <size>1 0.225 0.175</size>
             </box>
           </geometry>
-          <pose>1.7 0 1.6625 0 -0 1.5708</pose>
+          <pose>1.325 0 1.6625 0 -0 1.5708</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -490,10 +490,10 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>19 642000000</sim_time>
-      <real_time>19 789107056</real_time>
-      <wall_time>1721698789 500580793</wall_time>
-      <iterations>19642</iterations>
+      <sim_time>25 545000000</sim_time>
+      <real_time>25 711707138</real_time>
+      <wall_time>1721719958 992699584</wall_time>
+      <iterations>25545</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -505,10 +505,10 @@
         </link>
       </model>
       <model name='real_stairs'>
-        <pose>1.8125 0 0 0 -0 0</pose>
+        <pose>1.4375 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Stairs_1'>
-          <pose>1.8125 0 0 0 -0 0</pose>
+          <pose>1.4375 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -520,7 +520,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>5.19316 -9.38191 3.73646 -0 0.263643 2.0002</pose>
+        <pose>0.983157 -12.4382 3.39854 0 0.319643 1.6962</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

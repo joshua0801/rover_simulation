@@ -21,7 +21,6 @@
     <visual>
       <geometry>
         <box size="0.22 0.15 0.1" />
-        <!-- <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/rover.stl" scale="0.001 0.001 0.001"/> -->
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <material name="green"/>
@@ -34,7 +33,7 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
     <inertial>
-      <mass value="3"/>
+      <mass value="2"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -114,7 +113,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -133,7 +132,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -174,7 +173,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -193,7 +192,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -215,7 +214,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -234,7 +233,7 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="0.35"/>
+      <mass value="3.7"/>
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
@@ -252,7 +251,7 @@
     <child link="rocker_left"/>
     <origin xyz="-0.075 0.1 0.005" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="-0.26" upper="0.26" effort="100" velocity="10"/>
+    <limit lower="-0.13" upper="0.13" effort="100" velocity="10"/>
   </joint>
   <!-- rocker_right -->
   <joint name="rocker_right_joint" type="revolute">
@@ -261,14 +260,15 @@
     <origin xyz="-0.075 -0.1 0.005" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
     <mimic joint="rocker_left_joint" multiplier="-1.0"/>
-    <limit lower="-0.26" upper="0.26" effort="100" velocity="10"/>
+    <limit lower="-0.13" upper="0.13" effort="100" velocity="10"/>
   </joint>
   <!-- bogie_left -->
-  <joint name="bogie_left_joint" type="continuous">
+  <joint name="bogie_left_joint" type="revolute">
     <parent link="rocker_left"/>
     <child link="bogie_left"/>
     <origin xyz="0.145 0.02 -0.055" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="1.57" upper="-0.785" effort="100" velocity="10"/>
   </joint>
   <joint name="bogie_left_front_wheel_joint" type="continuous">
     <parent link="bogie_left"/>
@@ -284,11 +284,12 @@
   </joint>
 
   <!-- bogie_right -->
-  <joint name="bogie_right_joint" type="continuous">
+  <joint name="bogie_right_joint" type="revolute">
     <parent link="rocker_right"/>
     <child link="bogie_right"/>
     <origin xyz="0.145 -0.02 -0.055" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="1.57" upper="-0.785" effort="100" velocity="10"/>
   </joint>
   <joint name="bogie_right_front_wheel_joint" type="continuous">
     <parent link="bogie_right"/>
