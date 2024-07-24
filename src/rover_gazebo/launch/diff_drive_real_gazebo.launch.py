@@ -20,7 +20,7 @@ def generate_launch_description():
       output='screen'
   )
   
-  xacro_file = os.path.join(get_package_share_directory('rover_description'), 'rover.xacro.urdf')
+  xacro_file = os.path.join(get_package_share_directory('rover_description'), 'diff_drive_rover.xacro.urdf')
 
   doc = xacro.parse(open(xacro_file))
   xacro.process_doc(doc)

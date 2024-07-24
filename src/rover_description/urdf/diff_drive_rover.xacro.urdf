@@ -390,7 +390,7 @@
   <gazebo>
     <!-- Joint state publisher -->
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find rover_control)/config/rover_control.yaml</parameters>
+      <parameters>$(find rover_control)/config/diff_drive_control.yaml</parameters>
     </plugin>
   </gazebo>
   
