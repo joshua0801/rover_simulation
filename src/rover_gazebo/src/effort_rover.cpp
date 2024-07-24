@@ -1,35 +1,35 @@
-#include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/float64_multi_array.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+#include <chrono>
+#include <thread>
 
-class TorqueCommandPublisher : public rclcpp::Node
-{
-public:
-  TorqueCommandPublisher()
-  : Node("torque_command_publisher")
-  {
-    publisher_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("/torque_controller/commands", 10);
-    timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(100),
-      std::bind(&TorqueCommandPublisher::publish_torque_command, this));
-  }
-
-private:
-  void publish_torque_command()
-  {
-    auto message = std_msgs::msg::Float64MultiArray();
-    // Example torque values for each joint
-    message.data = {0.5, 0.5, 0.5, -0.5, -0.5, -0.5};
-    publisher_->publish(message);
-  }
-
-  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr publisher_;
-  rclcpp::TimerBase::SharedPtr timer_;
-};
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<TorqueCommandPublisher>());
+
+  auto node = std::make_shared<rclcpp::Node>("effort_test_node");
+
+  auto publisher = node->create_publisher<std_msgs::msg::Float64MultiArray>(
+    "/effort_controller/commands", 10);
+
+  RCLCPP_INFO(node->get_logger(), "Node created");
+
+  std_msgs::msg::Float64MultiArray commands;
+  float t = 0.9;
+  commands.data = {t, t, t, t, t, t};
+
+  rclcpp::WallRate loop_rate(100);  // Loop rate in Hz
+
+  while (rclcpp::ok()) {
+    publisher->publish(commands);
+    RCLCPP_INFO(node->get_logger(), "Published commands");
+    loop_rate.sleep();  // Sleep for the duration of the loop rate
+  }
+
   rclcpp::shutdown();
   return 0;
 }
