@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<robot name="rover">
+  <!-- colors -->
+  <material name="green">
+    <color rgba="0.0 1.0 0.0 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="1 1 1 1.0"/>
+  </material>
+
+  <!-- fixxed dimensions -->
+
+  <!-- robot house -->
+  <link name="base_link">
+    <!-- Visual properties of the link -->
+    <visual>
+      <geometry>
+        <box size="0.22 0.15 0.1" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="green"/>
+    </visual>
+    <!-- Collision properties of the link -->
+  </link>
+
+  <!-- bogie left-->
+  <link name="bogie_left">
+    <visual>
+      <geometry>
+        <cylinder radius="0.015" length="0.18"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 1.57 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  <link name="bogie_left_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  <link name="bogie_left_back_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <!-- bogie right-->
+  <link name="bogie_right">
+    <visual>
+      <geometry>
+        <cylinder radius="0.015" length="0.18"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 1.57 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  <link name="bogie_right_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  <link name="bogie_right_back_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <!-- back wheels-->
+  <link name="back_left">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+  <link name="back_right">
+    <visual>
+      <geometry>
+        <cylinder radius="0.057" length="0.03"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <!-- referrence -->
+  <!-- <link name="referrence">
+    <visual>
+      <origin xyz="0.15 0.05 -0.115" rpy="0 0 3.14"/>
+      <geometry>
+        <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/rover.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="example_material">
+        <color rgba="0.8 0.8 0.8 0.4"/>
+      </material>
+    </visual>
+  </link> -->
+
+  <!-- joints -->
+  <!-- bogie_left -->
+  <joint name="bogie_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="bogie_left"/>
+    <origin xyz="0.071 0.125 -0.05" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="bogie_left_front_wheel" type="continuous">
+    <parent link="bogie_left"/>
+    <child link="bogie_left_front_wheel"/>
+    <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="bogie_left_back_wheel" type="continuous">
+    <parent link="bogie_left"/>
+    <child link="bogie_left_back_wheel"/>
+    <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <!-- bogie_right -->
+  <joint name="bogie_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="bogie_right"/>
+    <origin xyz="0.071 -0.125 -0.05" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="bogie_right_front_wheel" type="continuous">
+    <parent link="bogie_right"/>
+    <child link="bogie_right_front_wheel"/>
+    <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="bogie_right_back_wheel" type="continuous">
+    <parent link="bogie_right"/>
+    <child link="bogie_right_back_wheel"/>
+    <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <!-- back wheels -->
+  <joint name="back_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_left"/>
+    <origin xyz="-0.17 0.125 -0.115" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+  <joint name="back_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_right"/>
+    <origin xyz="-0.17 -0.125 -0.115" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <!-- needed to visualise referrence -->
+  <!-- <joint name="referrence" type="fixed">
+    <parent link="base_link"/>
+    <child link="referrence"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint> -->
+
+  <!-- Optionally, define joints if this link is connected to others -->
+</robot>
