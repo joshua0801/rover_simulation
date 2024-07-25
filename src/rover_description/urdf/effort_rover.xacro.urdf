@@ -13,13 +13,17 @@
   </material>
 
   <!-- fixed dimensions -->
-  <xacro:property name="length" value="0.22"/>
-  <xacro:property name="width" value="0.15"/>
-  <xacro:property name="height" value="0.1"/>
-  <xacro:property name="mass" value="2.0"/>
-  <xacro:property name="cube_xx" value="${(1/12) * mass * (width * width + length * length)}"/>
-  <xacro:property name="cube_yy" value="${(1/12) * mass * (height * height + length * length)}"/>
-  <xacro:property name="cube_zz" value="${(1/12) * mass * (height * height + width * width)}"/>
+  <xacro:property name="body_length" value="0.22"/>
+  <xacro:property name="body_width" value="0.15"/>
+  <xacro:property name="body_height" value="0.1"/>
+  <xacro:property name="body_mass" value="2.0"/>
+  <xacro:property name="cube_xx" value="${(1/12) * body_mass * (body_width * body_width + body_length * body_length)}"/>
+  <xacro:property name="cube_yy" value="${(1/12) * body_mass * (body_height * body_height + body_length * body_length)}"/>
+  <xacro:property name="cube_zz" value="${(1/12) * body_mass * (body_height * body_height + body_width * body_width)}"/>
+
+  <xacro:property name="bogie_length" value="0.18"/>
+  <xacro:property name="bogie_mass" value="0.067"/>
+  <xacro:property name="bogie_inertia" value="${(1/12) * bogie_mass * bogie_length ** 2}"/>
 
   <xacro:property name="wheel_radius" value="0.057" />
   <xacro:property name="wheel_length" value="0.03"  />
@@ -48,7 +52,7 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
     <inertial>
-      <mass value="${mass}"/>
+      <mass value="${body_mass}"/>
       <inertia ixx="${cube_xx}" ixy="0.0" ixz="0.0" iyy="${cube_yy}" iyz="0.0" izz="${cube_zz}"/>
     </inertial>
   </link>
@@ -81,20 +85,20 @@
     <link name="${name}">
       <visual>
         <geometry>
-          <cylinder radius="0.015" length="0.18"/>
+          <cylinder radius="0.015" length="${bogie_length}"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 1.57 0"/>
         <material name="black"/>
       </visual>
       <collision>
         <geometry>
-          <cylinder radius="0.015" length="0.10"/>
+          <cylinder radius="0.015" length="${bogie_length}"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 1.57 0"/>
       </collision>
       <inertial>
-        <mass value="0.2"/>
-        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+        <mass value="${bogie_mass}"/>
+        <inertia ixx="${bogie_inertia}" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="${bogie_inertia}"/>
       </inertial>
     </link>
   </xacro:macro>
@@ -254,12 +258,12 @@
   <joint name="servo5_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo5"/>
-    <origin xyz="-0.17 0.14 -0.055" rpy="0 0 0"/>
+    <origin xyz="-0.17 0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <joint name="servo6_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo6"/>
-    <origin xyz="-0.17 -0.14 -0.055" rpy="0 0 0"/>
+    <origin xyz="-0.17 -0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <!-- transmission ####################################################### -->
   <ros2_control name="GazeboSystem" type="system">
