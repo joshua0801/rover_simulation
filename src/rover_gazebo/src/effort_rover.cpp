@@ -19,15 +19,13 @@ int main(int argc, char * argv[])
   RCLCPP_INFO(node->get_logger(), "Node created");
 
   std_msgs::msg::Float64MultiArray commands;
-  float t = 0.3;
+  float t = 0.29;
   commands.data = {t, t, t, t, t, t};
 
-  rclcpp::WallRate loop_rate(0.5);  // Loop rate in Hz
+  rclcpp::WallRate loop_rate(50);  // Loop rate in Hz
 
   while (rclcpp::ok()) {
     publisher->publish(commands);
-    RCLCPP_INFO(node->get_logger(), "Published commands");
-    RCLCPP_INFO(node->get_logger(), "Torque values: [%f, %f, %f, %f, %f, %f]", t, t, t, t, t, t);
     loop_rate.sleep();  // Sleep for the duration of the loop rate
   }
 

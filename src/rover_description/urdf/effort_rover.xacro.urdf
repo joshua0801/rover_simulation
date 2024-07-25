@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Macros-->
   <!-- colors -->
   <material name="green">
     <color rgba="0.0 1.0 0.0 1.0"/>
@@ -12,13 +13,11 @@
   </material>
 
   <!-- fixed dimensions -->
-  <!-- Define parameters -->
   <xacro:property name="wheel_radius" value="0.057" />
   <xacro:property name="wheel_length" value="0.03"  />
-  <xacro:property name="wheel_mass" value="0.15"  />
+  <xacro:property name="wheel_mass" value="0.37"  />
   <xacro:property name="wheel_total_mass" value="0.37"  />
 
-  <!-- Calculate moments of inertia -->
   <xacro:property name="inertia_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
   <xacro:property name="inertia_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
 
@@ -47,237 +46,69 @@
     </inertial>
   </link>
 
-  <!-- rocker left-->
-  <link name="rocker_left">
-    <visual>
-      <geometry>
-        <cylinder radius="0.015" length="0.05"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="red"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.015" length="0.05"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="0.2"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-    </inertial>
-  </link>
+  <xacro:macro name="rocker" params="name">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="0.015" length="0.05"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="red"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.015" length="0.05"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="0.2"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+  <xacro:rocker name="rocker_left"/>
+  <xacro:rocker name="rocker_right"/>
 
-  <!-- rocker right-->
-  <link name="rocker_right">
-    <visual>
-      <geometry>
-        <cylinder radius="0.015" length="0.05"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="red"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.015" length="0.05"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="0.2"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-    </inertial>
-  </link>
+  <xacro:macro name="bogie" params="name">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="0.015" length="0.18"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 1.57 0"/>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.015" length="0.10"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 1.57 0"/>
+      </collision>
+      <inertial>
+        <mass value="0.2"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+  <xacro:bogie name="bogie_left"/>
+  <xacro:bogie name="bogie_right"/>
 
-  <!-- bogie left-->
-  <link name="bogie_left">
-    <visual>
-      <geometry>
-        <cylinder radius="0.015" length="0.18"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.015" length="0.10"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
-    </collision>
-    <inertial>
-      <mass value="0.2"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-    </inertial>
-  </link>
-
-  <!-- bogie left front wheel -->
-  <link name="bogie_left_wheel_front">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="${wheel_total_mass}"/>
-      <inertia 
-        ixx="${inertia_xx_yy}"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="${inertia_xx_yy}"
-        iyz="0.0"
-        izz="${inertia_zz}"/>
-    </inertial>
-  </link>
-
-  <!-- bogie left back wheel -->
-  <link name="bogie_left_wheel_back">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="${wheel_total_mass}"/>
-      <inertia 
-        ixx="${inertia_xx_yy}"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="${inertia_xx_yy}"
-        iyz="0.0"
-        izz="${inertia_zz}"/>
-    </inertial>
-  </link>
-
-  <!-- bogie right-->
-  <link name="bogie_right">
-    <visual>
-      <geometry>
-        <cylinder radius="0.015" length="0.18"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.015" length="0.10"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
-    </collision>
-    <inertial>
-      <mass value="0.2"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-    </inertial>
-  </link>
-
-  <!-- bogie right front wheel -->
-  <link name="bogie_right_wheel_front">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="${wheel_total_mass}"/>
-      <inertia 
-        ixx="${inertia_xx_yy}"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="${inertia_xx_yy}"
-        iyz="0.0"
-        izz="${inertia_zz}"/>
-    </inertial>
-  </link>
-  <link name="bogie_right_wheel_back">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="${wheel_total_mass}"/>
-      <inertia 
-        ixx="${inertia_xx_yy}"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="${inertia_xx_yy}"
-        iyz="0.0"
-        izz="${inertia_zz}"/>
-    </inertial>
-  </link>
-  
-
-  <!-- back wheels-->
-  <link name="back_wheel_left">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
-    <inertial>
-      <mass value="${wheel_total_mass}"/>
-      <inertia 
-        ixx="${inertia_xx_yy}"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="${inertia_xx_yy}"
-        iyz="0.0"
-        izz="${inertia_zz}"/>
-    </inertial>
-  </link>
-  <link name="back_wheel_right">
-    <visual>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.057" length="0.03"/>
-      </geometry>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
-    </collision>
+  <xacro:macro name="wheel" params="name">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="0.057" length="0.03"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.057" length="0.03"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      </collision>
       <inertial>
         <mass value="${wheel_total_mass}"/>
         <inertia 
@@ -288,8 +119,30 @@
           iyz="0.0"
           izz="${inertia_zz}"/>
       </inertial>
-  </link>
+    </link>
+  </xacro:macro>
+  <xacro:wheel name="bogie_left_wheel_front"/>
+  <xacro:wheel name="bogie_left_wheel_back"/>
+  <xacro:wheel name="back_left_wheel"/>
+  <xacro:wheel name="bogie_right_wheel_front"/>
+  <xacro:wheel name="bogie_right_wheel_back"/>
+  <xacro:wheel name="back_right_wheel"/>
 
+  <xacro:macro name="servo" params="name">
+    <link name="${name}">
+      <inertial>
+        <mass value="0.013"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+  <xacro:servo name="servo1"/>
+  <xacro:servo name="servo2"/>
+  <xacro:servo name="servo3"/>
+  <xacro:servo name="servo4"/>
+  <xacro:servo name="servo5"/>
+  <xacro:servo name="servo6"/>
+  
   <!-- joints ############################################################# -->
    <joint name="base_joint" type="fixed">
       <parent link="base_footprint"/>
@@ -357,19 +210,50 @@
   </joint>
 
   <!-- back wheels -->
-  <joint name="back_wheel_left_joint" type="continuous">
+  <joint name="back_left_wheel_joint" type="continuous">
     <parent link="rocker_left"/>
-    <child link="back_wheel_left"/>
+    <child link="back_left_wheel"/>
     <origin xyz="-0.095 0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
-  <joint name="back_wheel_right_joint" type="continuous">
+  <joint name="back_right_wheel_joint" type="continuous">
     <parent link="rocker_right"/>
-    <child link="back_wheel_right"/>
+    <child link="back_right_wheel"/>
     <origin xyz="-0.095 -0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
 
+  <!-- Servo weight-->
+  <joint name="servo1_joint" type="fixed">
+    <parent link="bogie_left"/>
+    <child link="servo1"/>
+    <origin xyz="0.08 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="servo2_joint" type="fixed">
+    <parent link="bogie_right"/>
+    <child link="servo2"/>
+    <origin xyz="0.08 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="servo3_joint" type="fixed">
+    <parent link="bogie_left"/>
+    <child link="servo3"/>
+    <origin xyz="-0.08 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="servo4_joint" type="fixed">
+    <parent link="bogie_right"/>
+    <child link="servo4"/>
+    <origin xyz="-0.08 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="servo5_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="servo5"/>
+    <origin xyz="-0.17 0.14 -0.055" rpy="0 0 0"/>
+  </joint>
+  <joint name="servo6_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="servo6"/>
+    <origin xyz="-0.17 -0.14 -0.055" rpy="0 0 0"/>
+  </joint>
   <!-- transmission ####################################################### -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
@@ -397,7 +281,7 @@
     </joint>
   
     <!-- Left wheel 3 -->
-    <joint name="back_wheel_left_joint">
+    <joint name="back_left_wheel_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -427,7 +311,7 @@
     </joint>
   
     <!-- Right wheel 3 -->
-    <joint name="back_wheel_right_joint">
+    <joint name="back_right_wheel_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -445,5 +329,4 @@
       <parameters>$(find rover_control)/config/effort_control.yaml</parameters>
     </plugin>
   </gazebo>
-  
 </robot>

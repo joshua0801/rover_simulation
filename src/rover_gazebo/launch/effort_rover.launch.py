@@ -64,6 +64,11 @@ def generate_launch_description():
               on_exit=[start_effort_controller],
           )
       ),
+      Node(
+        package="rover_gazebo",
+        executable="effort_rover",
+        output="screen"
+      ),
       gazebo,
       node_robot_state_publisher,
       spawn_entity,
