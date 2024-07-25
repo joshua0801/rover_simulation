@@ -11,7 +11,16 @@
     <color rgba="1 0 0 1.0"/>
   </material>
 
-  <!-- fixxed dimensions -->
+  <!-- fixed dimensions -->
+  <!-- Define parameters -->
+  <xacro:property name="wheel_radius" value="0.057" />
+  <xacro:property name="wheel_length" value="0.03"  />
+  <xacro:property name="wheel_mass" value="0.15"  />
+  <xacro:property name="wheel_total_mass" value="0.37"  />
+
+  <!-- Calculate moments of inertia -->
+  <xacro:property name="inertia_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
+  <xacro:property name="inertia_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
 
   <!-- links ###############################################################-->
   <link name="base_footprint" />
@@ -58,7 +67,8 @@
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
-  <!-- rocker left-->
+
+  <!-- rocker right-->
   <link name="rocker_right">
     <visual>
       <geometry>
@@ -78,6 +88,7 @@
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
+
   <!-- bogie left-->
   <link name="bogie_left">
     <visual>
@@ -98,7 +109,9 @@
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
-  <link name="bogie_left_front_wheel">
+
+  <!-- bogie left front wheel -->
+  <link name="bogie_left_wheel_front">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -113,11 +126,19 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${wheel_total_mass}"/>
+      <inertia 
+        ixx="${inertia_xx_yy}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${inertia_xx_yy}"
+        iyz="0.0"
+        izz="${inertia_zz}"/>
     </inertial>
   </link>
-  <link name="bogie_left_back_wheel">
+
+  <!-- bogie left back wheel -->
+  <link name="bogie_left_wheel_back">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -132,11 +153,16 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${wheel_total_mass}"/>
+      <inertia 
+        ixx="${inertia_xx_yy}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${inertia_xx_yy}"
+        iyz="0.0"
+        izz="${inertia_zz}"/>
     </inertial>
   </link>
-  
 
   <!-- bogie right-->
   <link name="bogie_right">
@@ -149,7 +175,7 @@
     </visual>
     <collision>
       <geometry>
-        <cylinder radius="0.015" length="0.1"/>
+        <cylinder radius="0.015" length="0.10"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 1.57 0"/>
     </collision>
@@ -158,7 +184,9 @@
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
   </link>
-  <link name="bogie_right_front_wheel">
+
+  <!-- bogie right front wheel -->
+  <link name="bogie_right_wheel_front">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -173,11 +201,17 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${wheel_total_mass}"/>
+      <inertia 
+        ixx="${inertia_xx_yy}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${inertia_xx_yy}"
+        iyz="0.0"
+        izz="${inertia_zz}"/>
     </inertial>
   </link>
-  <link name="bogie_right_back_wheel">
+  <link name="bogie_right_wheel_back">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -192,14 +226,20 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${wheel_total_mass}"/>
+      <inertia 
+        ixx="${inertia_xx_yy}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${inertia_xx_yy}"
+        iyz="0.0"
+        izz="${inertia_zz}"/>
     </inertial>
   </link>
   
 
   <!-- back wheels-->
-  <link name="back_left">
+  <link name="back_wheel_left">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -214,11 +254,17 @@
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
     <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${wheel_total_mass}"/>
+      <inertia 
+        ixx="${inertia_xx_yy}"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="${inertia_xx_yy}"
+        iyz="0.0"
+        izz="${inertia_zz}"/>
     </inertial>
   </link>
-  <link name="back_right">
+  <link name="back_wheel_right">
     <visual>
       <geometry>
         <cylinder radius="0.057" length="0.03"/>
@@ -232,10 +278,16 @@
       </geometry>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
     </collision>
-    <inertial>
-      <mass value="3.7"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-    </inertial>
+      <inertial>
+        <mass value="${wheel_total_mass}"/>
+        <inertia 
+          ixx="${inertia_xx_yy}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${inertia_xx_yy}"
+          iyz="0.0"
+          izz="${inertia_zz}"/>
+      </inertial>
   </link>
 
   <!-- joints ############################################################# -->
@@ -270,15 +322,15 @@
     <axis xyz="0.0 1.0 0.0"/>
     <limit lower="1.57" upper="-0.785" effort="100" velocity="10"/>
   </joint>
-  <joint name="bogie_left_front_wheel_joint" type="continuous">
+  <joint name="bogie_left_wheel_front_joint" type="continuous">
     <parent link="bogie_left"/>
-    <child link="bogie_left_front_wheel"/>
+    <child link="bogie_left_wheel_front"/>
     <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
-  <joint name="bogie_left_back_wheel_joint" type="continuous">
+  <joint name="bogie_left_wheel_back_joint" type="continuous">
     <parent link="bogie_left"/>
-    <child link="bogie_left_back_wheel"/>
+    <child link="bogie_left_wheel_back"/>
     <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
@@ -291,29 +343,29 @@
     <axis xyz="0.0 1.0 0.0"/>
     <limit lower="1.57" upper="-0.785" effort="100" velocity="10"/>
   </joint>
-  <joint name="bogie_right_front_wheel_joint" type="continuous">
+  <joint name="bogie_right_wheel_front_joint" type="continuous">
     <parent link="bogie_right"/>
-    <child link="bogie_right_front_wheel"/>
+    <child link="bogie_right_wheel_front"/>
     <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
-  <joint name="bogie_right_back_wheel_joint" type="continuous">
+  <joint name="bogie_right_wheel_back_joint" type="continuous">
     <parent link="bogie_right"/>
-    <child link="bogie_right_back_wheel"/>
+    <child link="bogie_right_wheel_back"/>
     <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
 
   <!-- back wheels -->
-  <joint name="back_left_joint" type="continuous">
+  <joint name="back_wheel_left_joint" type="continuous">
     <parent link="rocker_left"/>
-    <child link="back_left"/>
+    <child link="back_wheel_left"/>
     <origin xyz="-0.095 0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
-  <joint name="back_right_joint" type="continuous">
+  <joint name="back_wheel_right_joint" type="continuous">
     <parent link="rocker_right"/>
-    <child link="back_right"/>
+    <child link="back_wheel_right"/>
     <origin xyz="-0.095 -0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
@@ -325,7 +377,7 @@
     </hardware>
   
     <!-- Left wheel 1 -->
-    <joint name="bogie_left_front_wheel_joint">
+    <joint name="bogie_left_wheel_front_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -335,7 +387,7 @@
     </joint>
   
     <!-- Left wheel 2 -->
-    <joint name="bogie_left_back_wheel_joint">
+    <joint name="bogie_left_wheel_back_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -345,7 +397,7 @@
     </joint>
   
     <!-- Left wheel 3 -->
-    <joint name="back_left_joint">
+    <joint name="back_wheel_left_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -355,7 +407,7 @@
     </joint>
   
     <!-- Right wheel 1 -->
-    <joint name="bogie_right_front_wheel_joint">
+    <joint name="bogie_right_wheel_front_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -365,7 +417,7 @@
     </joint>
   
     <!-- Right wheel 2 -->
-    <joint name="bogie_right_back_wheel_joint">
+    <joint name="bogie_right_wheel_back_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -375,7 +427,7 @@
     </joint>
   
     <!-- Right wheel 3 -->
-    <joint name="back_right_joint">
+    <joint name="back_wheel_right_joint">
       <command_interface name="effort">
         <param name="min">-1</param>
         <param name="max">1</param>
