@@ -32,6 +32,8 @@
   <xacro:property name="wheel_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
   <xacro:property name="wheel_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
 
+  <xacro:property name="velocity_limit" value="5"/>
+
   <!-- links ###############################################################-->
   <link name="base_footprint" />
   <!-- robot house -->
@@ -191,12 +193,14 @@
     <child link="bogie_left_wheel_front"/>
     <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
   <joint name="bogie_left_wheel_back_joint" type="continuous">
     <parent link="bogie_left"/>
     <child link="bogie_left_wheel_back"/>
     <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
 
   <!-- bogie_right -->
@@ -212,12 +216,14 @@
     <child link="bogie_right_wheel_front"/>
     <origin xyz="0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
   <joint name="bogie_right_wheel_back_joint" type="continuous">
     <parent link="bogie_right"/>
     <child link="bogie_right_wheel_back"/>
     <origin xyz="-0.08 0 -0.065" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
 
   <!-- back wheels -->
@@ -226,12 +232,14 @@
     <child link="back_left_wheel"/>
     <origin xyz="-0.095 0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
   <joint name="back_right_wheel_joint" type="continuous">
     <parent link="rocker_right"/>
     <child link="back_right_wheel"/>
     <origin xyz="-0.095 -0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="0.8" velocity="${velocity_limit}"/>
   </joint>
 
   <!-- Servo weight-->
