@@ -13,13 +13,20 @@
   </material>
 
   <!-- fixed dimensions -->
+  <xacro:property name="length" value="0.22"/>
+  <xacro:property name="width" value="0.15"/>
+  <xacro:property name="height" value="0.1"/>
+  <xacro:property name="mass" value="2.0"/>
+  <xacro:property name="cube_xx" value="${(1/12) * mass * (width * width + length * length)}"/>
+  <xacro:property name="cube_yy" value="${(1/12) * mass * (height * height + length * length)}"/>
+  <xacro:property name="cube_zz" value="${(1/12) * mass * (height * height + width * width)}"/>
+
   <xacro:property name="wheel_radius" value="0.057" />
   <xacro:property name="wheel_length" value="0.03"  />
   <xacro:property name="wheel_mass" value="0.37"  />
   <xacro:property name="wheel_total_mass" value="0.37"  />
-
-  <xacro:property name="inertia_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
-  <xacro:property name="inertia_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
+  <xacro:property name="wheel_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
+  <xacro:property name="wheel_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
 
   <!-- links ###############################################################-->
   <link name="base_footprint" />
@@ -41,8 +48,8 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
     <inertial>
-      <mass value="2"/>
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      <mass value="${mass}"/>
+      <inertia ixx="${cube_xx}" ixy="0.0" ixz="0.0" iyy="${cube_yy}" iyz="0.0" izz="${cube_zz}"/>
     </inertial>
   </link>
 
@@ -63,7 +70,7 @@
       </collision>
       <inertial>
         <mass value="0.2"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
       </inertial>
     </link>
   </xacro:macro>
@@ -87,7 +94,7 @@
       </collision>
       <inertial>
         <mass value="0.2"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
       </inertial>
     </link>
   </xacro:macro>
@@ -112,12 +119,12 @@
       <inertial>
         <mass value="${wheel_total_mass}"/>
         <inertia 
-          ixx="${inertia_xx_yy}"
+          ixx="${wheel_xx_yy}"
           ixy="0.0"
           ixz="0.0"
-          iyy="${inertia_xx_yy}"
+          iyy="${wheel_xx_yy}"
           iyz="0.0"
-          izz="${inertia_zz}"/>
+          izz="${wheel_zz}"/>
       </inertial>
     </link>
   </xacro:macro>
@@ -132,7 +139,7 @@
     <link name="${name}">
       <inertial>
         <mass value="0.013"/>
-        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
       </inertial>
     </link>
   </xacro:macro>
