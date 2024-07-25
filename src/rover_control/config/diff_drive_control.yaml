@@ -11,8 +11,8 @@ controller_manager:
 
 diff_drive_base_controller:
   ros__parameters:
-    left_wheel_names: ["back_left_joint","bogie_left_front_wheel_joint", "bogie_left_back_wheel_joint"]
-    right_wheel_names: ["back_right_joint","bogie_right_front_wheel_joint","bogie_right_back_wheel_joint"]
+    left_wheel_names: ["back_left_wheel_joint","bogie_left_wheel_front_joint", "bogie_left_wheel_back_joint"]
+    right_wheel_names: ["back_right_wheel_joint","bogie_right_wheel_front_joint","bogie_right_wheel_back_joint"]
 
     wheel_separation: 0.160
     #wheels_per_side: 1  # actually 2, but both are controlled by 1 signal

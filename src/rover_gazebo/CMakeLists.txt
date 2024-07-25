@@ -7,13 +7,19 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(gazebo_ros REQUIRED)
+
 # Install directories
 install(DIRECTORY launch/
   DESTINATION share/${CMAKE_PROJECT_NAME}/)
+
+add_executable(effort_rover src/effort_rover.cpp)
+ament_target_dependencies(effort_rover
+  rclcpp
+  std_msgs
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -26,5 +32,14 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+## Install
+install(
+  TARGETS
+    effort_rover
+  DESTINATION
+    lib/${PROJECT_NAME}
+)
+
 
 ament_package()
