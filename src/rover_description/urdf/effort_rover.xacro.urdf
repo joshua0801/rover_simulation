@@ -35,7 +35,7 @@
   <xacro:property name="wheel_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
   <xacro:property name="wheel_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
   
-  <xacro:property name="wheel_on_bogie_mass" value="0.8"  />
+  <xacro:property name="wheel_on_bogie_mass" value="0.55"  />
   <xacro:property name="wheel_on_rocker_mass" value="0.37"  />
   <xacro:property name="velocity_limit" value="10"/>
 
