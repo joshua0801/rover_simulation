@@ -102,7 +102,7 @@
   </link>
 
   <!-- referrence -->
-  <!-- <link name="referrence">
+  <link name="referrence">
     <visual>
       <origin xyz="0.15 0.05 -0.115" rpy="0 0 3.14"/>
       <geometry>
@@ -112,9 +112,15 @@
         <color rgba="0.8 0.8 0.8 0.4"/>
       </material>
     </visual>
-  </link> -->
+  </link>
 
-  <!-- joints -->
+  <!-- joints ###########################################################################################3-->
+     <!-- needed to visualise referrence -->
+  <joint name="referrence" type="fixed">
+    <parent link="base_link"/>
+    <child link="referrence"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
   <!-- bogie_left -->
   <joint name="bogie_left" type="continuous">
     <parent link="base_link"/>
@@ -167,13 +173,6 @@
     <origin xyz="-0.17 -0.125 -0.115" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
   </joint>
-
-  <!-- needed to visualise referrence -->
-  <!-- <joint name="referrence" type="fixed">
-    <parent link="base_link"/>
-    <child link="referrence"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint> -->
 
   <!-- Optionally, define joints if this link is connected to others -->
 </robot>
