@@ -19,7 +19,7 @@ int main(int argc, char * argv[])
   RCLCPP_INFO(node->get_logger(), "Node created");
 
   std_msgs::msg::Float64MultiArray commands;
-  float t = 0.75;
+  float t = 0.7;
   commands.data = {t, t, t, t, t, t};
 
   rclcpp::WallRate loop_rate(50);  // Loop rate in Hz

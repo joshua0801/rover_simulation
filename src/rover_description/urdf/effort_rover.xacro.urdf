@@ -16,17 +16,17 @@
   <xacro:property name="body_length" value="0.22"/>
   <xacro:property name="body_width" value="0.15"/>
   <xacro:property name="body_height" value="0.1"/>
-  <xacro:property name="body_mass" value="2.0"/>
+  <xacro:property name="body_mass" value="2"/>
   <xacro:property name="cube_xx" value="${(1/12) * body_mass * (body_width * body_width + body_length * body_length)}"/>
   <xacro:property name="cube_yy" value="${(1/12) * body_mass * (body_height * body_height + body_length * body_length)}"/>
   <xacro:property name="cube_zz" value="${(1/12) * body_mass * (body_height * body_height + body_width * body_width)}"/>
 
   <!-- bogie and rocker lengths and inertia -->
-  <xacro:property name="rocker_to_bogie" value="0.145"/><!-- 0.145-->
+  <xacro:property name="rocker_to_bogie" value="0.2"/><!-- 0.145-->
   <xacro:property name="bogie_length" value="0.2"/><!-- 0.16-->
   <xacro:property name="bogie_mass" value="0.057"/>
   <xacro:property name="bogie_inertia" value="${(1/12) * bogie_mass * bogie_length ** 2}"/>
-  <xacro:property name="rocker_to_back_wheel" value="-0.135"/><!-- -0.095-->
+  <xacro:property name="rocker_to_back_wheel" value="-${bogie_length-(rocker_to_bogie-(bogie_length/2))}"/><!-- -0.095-->
 
   <!-- wheel inertia -->
   <xacro:property name="wheel_radius" value="0.057" />
@@ -35,10 +35,10 @@
   <xacro:property name="wheel_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
   <xacro:property name="wheel_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
   
-  <xacro:property name="front_wheel_mass" value="0.55"  />
-  <xacro:property name="mid_wheel_mass" value="0.7"  />
+  <xacro:property name="front_wheel_mass" value="0.37"  />
+  <xacro:property name="mid_wheel_mass" value="0.37"  />
   <xacro:property name="back_wheel_mass" value="0.37"  />
-  <xacro:property name="velocity_limit" value="10"/>
+  <xacro:property name="velocity_limit" value="8"/>
 
   <!-- links ###############################################################-->
   <link name="base_footprint" />
@@ -82,7 +82,7 @@
         <origin xyz="0 0 0" rpy="1.57 0 0"/>
       </collision>
       <inertial>
-        <mass value="0.2"/>
+        <mass value="0.07"/>
         <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
       </inertial>
     </link>
@@ -163,25 +163,6 @@
   <xacro:servo name="servo5"/>
   <xacro:servo name="servo6"/>
 
-  <link name="referrence">
-    <visual>
-      <origin xyz="0.15 0.05 -0.115" rpy="0 0 3.14"/>
-      <geometry>
-        <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/rover.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="example_material">
-        <color rgba="0.8 0.8 0.8 0.4"/>
-      </material>
-    </visual>
-  </link>
-
-  <!-- joints ###########################################################################################3-->
-     <!-- needed to visualise referrence -->
-  <joint name="referrence" type="fixed">
-    <parent link="base_link"/>
-    <child link="referrence"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
    <joint name="base_joint" type="fixed">
       <parent link="base_footprint"/>
       <child link="base_link"/>
@@ -291,12 +272,12 @@
   <joint name="servo5_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo5"/>
-    <origin xyz="-0.20 0.12 -0.055" rpy="0 0 0"/>
+    <origin xyz="${rocker_to_back_wheel} 0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <joint name="servo6_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo6"/>
-    <origin xyz="-0.20 -0.12 -0.055" rpy="0 0 0"/>
+    <origin xyz="${rocker_to_back_wheel} -0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <!-- transmission ####################################################### -->
   <ros2_control name="GazeboSystem" type="system">
