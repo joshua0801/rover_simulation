@@ -35,8 +35,9 @@
   <xacro:property name="wheel_zz" value="${0.5 * wheel_mass * (wheel_radius ** 2)}"/>
   <xacro:property name="wheel_xx_yy" value="${wheel_mass / 12.0 * (3.0 * wheel_radius ** 2) + wheel_length ** 2}"/>
   
-  <xacro:property name="wheel_on_bogie_mass" value="0.55"  />
-  <xacro:property name="wheel_on_rocker_mass" value="0.37"  />
+  <xacro:property name="front_wheel_mass" value="0.55"  />
+  <xacro:property name="mid_wheel_mass" value="0.7"  />
+  <xacro:property name="back_wheel_mass" value="0.37"  />
   <xacro:property name="velocity_limit" value="10"/>
 
   <!-- links ###############################################################-->
@@ -119,14 +120,14 @@
         <geometry>
           <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 -0.03 0" rpy="0 0 0"/>
         <material name="black"/>
       </visual>
       <collision>
         <geometry>
           <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
         </geometry>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 -0.03 0" rpy="0 0 0"/>
       </collision>
       <inertial>
         <mass value="${mass}"/>
@@ -140,12 +141,12 @@
       </inertial>
     </link>
   </xacro:macro>
-  <xacro:wheel name="bogie_left_wheel_front" mass="${wheel_on_bogie_mass}"/>
-  <xacro:wheel name="bogie_left_wheel_back" mass="${wheel_on_bogie_mass}"/>
-  <xacro:wheel name="back_left_wheel" mass="${wheel_on_rocker_mass}"/>
-  <xacro:wheel name="bogie_right_wheel_front" mass="${wheel_on_bogie_mass}"/>
-  <xacro:wheel name="bogie_right_wheel_back" mass="${wheel_on_bogie_mass}"/>
-  <xacro:wheel name="back_right_wheel" mass="${wheel_on_rocker_mass}"/>
+  <xacro:wheel name="bogie_left_wheel_front" mass="${front_wheel_mass}"/>
+  <xacro:wheel name="bogie_left_wheel_back" mass="${mid_wheel_mass}"/>
+  <xacro:wheel name="back_left_wheel" mass="${back_wheel_mass}"/>
+  <xacro:wheel name="bogie_right_wheel_front" mass="${front_wheel_mass}"/>
+  <xacro:wheel name="bogie_right_wheel_back" mass="${mid_wheel_mass}"/>
+  <xacro:wheel name="back_right_wheel" mass="${back_wheel_mass}"/>
 
   <xacro:macro name="servo" params="name">
     <link name="${name}">
@@ -162,8 +163,25 @@
   <xacro:servo name="servo5"/>
   <xacro:servo name="servo6"/>
 
+  <link name="referrence">
+    <visual>
+      <origin xyz="0.15 0.05 -0.115" rpy="0 0 3.14"/>
+      <geometry>
+        <mesh filename="file:///home/joshua/Desktop/rover_simulation/src/rover_description/meshes/rover.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="example_material">
+        <color rgba="0.8 0.8 0.8 0.4"/>
+      </material>
+    </visual>
+  </link>
 
   <!-- joints ###########################################################################################3-->
+     <!-- needed to visualise referrence -->
+  <joint name="referrence" type="fixed">
+    <parent link="base_link"/>
+    <child link="referrence"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
    <joint name="base_joint" type="fixed">
       <parent link="base_footprint"/>
       <child link="base_link"/>
@@ -237,7 +255,7 @@
   <joint name="back_left_wheel_joint" type="continuous">
     <parent link="rocker_left"/>
     <child link="back_left_wheel"/>
-    <origin xyz="${rocker_to_back_wheel} 0.02 -0.12" rpy="0 0 0"/>
+    <origin xyz="${rocker_to_back_wheel} -0.02 -0.12" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
     <limit effort="100" velocity="${velocity_limit}"/>
   </joint>
@@ -253,32 +271,32 @@
   <joint name="servo1_joint" type="fixed">
     <parent link="bogie_left"/>
     <child link="servo1"/>
-    <origin xyz="0.08 0 0" rpy="0 0 0"/>
+    <origin xyz="${bogie_length/2} 0 0" rpy="0 0 0"/>
   </joint>
   <joint name="servo2_joint" type="fixed">
     <parent link="bogie_right"/>
     <child link="servo2"/>
-    <origin xyz="0.08 0 0" rpy="0 0 0"/>
+    <origin xyz="${bogie_length/2} 0 0" rpy="0 0 0"/>
   </joint>
   <joint name="servo3_joint" type="fixed">
     <parent link="bogie_left"/>
     <child link="servo3"/>
-    <origin xyz="-0.08 0 0" rpy="0 0 0"/>
+    <origin xyz="-${bogie_length/2} 0 0" rpy="0 0 0"/>
   </joint>
   <joint name="servo4_joint" type="fixed">
     <parent link="bogie_right"/>
     <child link="servo4"/>
-    <origin xyz="-0.08 0 0" rpy="0 0 0"/>
+    <origin xyz="-${bogie_length/2} 0 0" rpy="0 0 0"/>
   </joint>
   <joint name="servo5_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo5"/>
-    <origin xyz="-0.17 0.12 -0.055" rpy="0 0 0"/>
+    <origin xyz="-0.20 0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <joint name="servo6_joint" type="fixed">
     <parent link="base_link"/>
     <child link="servo6"/>
-    <origin xyz="-0.17 -0.12 -0.055" rpy="0 0 0"/>
+    <origin xyz="-0.20 -0.12 -0.055" rpy="0 0 0"/>
   </joint>
   <!-- transmission ####################################################### -->
   <ros2_control name="GazeboSystem" type="system">
