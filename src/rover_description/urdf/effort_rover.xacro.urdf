@@ -192,7 +192,7 @@
     <child link="bogie_left"/>
     <origin xyz="${rocker_to_bogie} 0.02 -0.055" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="1.57" upper="-0.436332" effort="100" velocity="10"/>
+    <limit lower="1.57" upper="-0.523599" effort="100" velocity="10"/>
   </joint>
   <joint name="bogie_left_wheel_front_joint" type="continuous">
     <parent link="bogie_left"/>
@@ -215,7 +215,7 @@
     <child link="bogie_right"/>
     <origin xyz="${rocker_to_bogie} -0.02 -0.055" rpy="0 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="1.57" upper="-0.436332" effort="100" velocity="10"/><!-- -0.436332-->
+    <limit lower="1.57" upper="-0.523599" effort="100" velocity="10"/><!-- -0.523599-->
   </joint>
   <joint name="bogie_right_wheel_front_joint" type="continuous">
     <parent link="bogie_right"/>
